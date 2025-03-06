@@ -10,3 +10,26 @@ frontend:
             - '**/*'
     cache:
         paths: []
+
+mkdir ./dist && touch ./dist/index.html - biulds to blank screen
+npm run build does not build
+
+prebuild:  //did not work
+    commands:
+    - cd fellow_app
+    - npm ci
+
+
+frontend:
+    phases:
+      prebuild:
+        commands:
+          - cd fellow_app
+          - npm ci
+        build:
+            commands:
+                - npm run
+    artifacts:
+        baseDirectory: fellowship_app
+        files:
+            - '**/*'
