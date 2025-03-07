@@ -23,6 +23,9 @@ export default function App() {
   }
 
   if (auth.isAuthenticated) {
+    console.log("User");
+    console.log(auth.user);
+    
     return (
       <div>
         <pre> Hello: {auth.user?.profile.email} </pre>
@@ -30,15 +33,22 @@ export default function App() {
         <pre> Access Token: {auth.user?.access_token} </pre>
         <pre> Refresh Token: {auth.user?.refresh_token} </pre>
 
-        <button onClick={() => auth.removeUser()}>Sign out</button>
+        <NewItem/>
+        <ItemDisplay/>
+
+        {/* <button onClick={() => auth.removeUser()}>Sign out</button> */}
       </div>
     );
   }
 
   return (
-    <div>
-      <button onClick={() => auth.signinRedirect()}>Sign in</button>
-      <button onClick={() => signOutRedirect()}>Sign out</button>
+    <div className='sign_in_out'>
+      { 
+        auth.isAuthenticated ? 
+          <button onClick={() => signOutRedirect()}>Sign out</button> 
+          : 
+          <button onClick={() => auth.signinRedirect()}>Sign in</button>
+      }
     </div>
   );
 
