@@ -18,7 +18,6 @@ prebuild:  //did not work
     - cd fellow_app
     - npm ci
 
-
 frontend:
     phases:
       prebuild:
@@ -75,8 +74,7 @@ frontend:
       - node_modules/**/* 
       - .npm/**/*
 
-
-frontend:
+frontend: FAILED
     phases:
       prebuild:
         commands:
@@ -86,6 +84,27 @@ frontend:
             commands:
                 - npm run build
                 - ls -la dist
+    artifacts:
+        baseDirectory: fellowship-app/dist
+        files:
+            - '**/*'
+    cache:
+        paths:
+          - node_modules/**/* 
+          - .npm/**/*
+
+
+version: 1
+frontend: WORKS
+    phases:
+        build:
+            commands:
+                - echo "Building the React app..."
+                - cd fellowship-app
+                - npm install
+                - npm run build
+                - echo "Build directory:"
+                - ls -R dist
     artifacts:
         baseDirectory: fellowship-app/dist
         files:
