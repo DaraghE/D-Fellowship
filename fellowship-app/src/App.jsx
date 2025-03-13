@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './CSS/App.css'
 
+import ToDo from './ToDo';
+
 import { useAuth } from "react-oidc-context";
 
 export default function App() {
@@ -42,14 +44,22 @@ export default function App() {
   }
 
   return (
-    <div className='sign_in_out'>
-      { 
-        auth.isAuthenticated ? 
-          <button onClick={() => signOutRedirect()}>Sign out</button> 
-          : 
-          <button onClick={() => auth.signinRedirect()}>Sign in</button>
-      }
-    </div>
+    <>
+      <div className='sign_in_out'>
+        <ToDo/>
+      </div>
+      <br/>
+      <div className='sign_in_out'>
+        { 
+          auth.isAuthenticated ? 
+            <button onClick={() => signOutRedirect()}>Sign out</button> 
+            : 
+            <button onClick={() => auth.signinRedirect()}>Sign in</button>
+        }
+      </div>    
+    </>
+
+
   );
 
 }
