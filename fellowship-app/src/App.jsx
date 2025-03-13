@@ -4,6 +4,7 @@ import './CSS/App.css'
 import ToDo from './ToDo';
 
 import { useAuth } from "react-oidc-context";
+import { UserIn, Waiting } from './Content';
 
 export default function App() {
   const auth = useAuth();
@@ -35,8 +36,8 @@ export default function App() {
         <pre> Access Token: {auth.user?.access_token} </pre>
         <pre> Refresh Token: {auth.user?.refresh_token} </pre>
 
-        <NewItem/>
-        <ItemDisplay/>
+        {/* <NewItem/> */}
+        {/* <ItemDisplay/> */}
 
         {/* <button onClick={() => auth.removeUser()}>Sign out</button> */}
       </div>
@@ -46,17 +47,10 @@ export default function App() {
   return (
     <>
       <div className='sign_in_out'>
-        <ToDo/>
+        {content(auth)}
       </div>
       <br/>
-      <div className='sign_in_out'>
-        { 
-          auth.isAuthenticated ? 
-            <button onClick={() => signOutRedirect()}>Sign out</button> 
-            : 
-            <button onClick={() => auth.signinRedirect()}>Sign in</button>
-        }
-      </div>    
+      <div>{auth_controls(auth)}</div>
     </>
 
 
@@ -64,3 +58,30 @@ export default function App() {
 
 }
 
+function content(auth) {
+  return (
+    <div>
+      <div>
+        {
+          auth.isAuthenticated ? 
+            <UserIn/>
+          :
+            <Waiting/>
+        }
+      </div>
+    </div>
+  )
+
+}
+function auth_controls(auth) {
+  return (
+    <div className='sign_in_out'>
+      { 
+        auth.isAuthenticated ? 
+          <button onClick={() => signOutRedirect()}>Sign out</button> 
+          : 
+          <button onClick={() => auth.signinRedirect()}>Sign in</button>
+      }
+    </div> 
+  )  
+}
