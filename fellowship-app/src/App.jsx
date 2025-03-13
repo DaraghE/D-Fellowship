@@ -15,7 +15,19 @@ export default function App() {
     const cognitoDomain = "https://ap-southeast-2xlqezwsng.auth.ap-southeast-2.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
   };
+  
 
+
+  return(
+    <div>
+      {content()}
+
+      {buttons() }
+    </div>
+
+  )
+}
+function content(){
   if (auth.isLoading) {
     return <div>Loading...</div>;
   }
@@ -35,19 +47,21 @@ export default function App() {
         <pre> Access Token: {auth.user?.access_token} </pre>
         <pre> Refresh Token: {auth.user?.refresh_token} </pre>
 
-        <NewItem/>
-        <ItemDisplay/>
+        <div className='sign_in_out'>
+          <ToDo/>
+        </div>
 
         {/* <button onClick={() => auth.removeUser()}>Sign out</button> */}
       </div>
     );
   }
+}
 
+
+function buttons(){
   return (
     <>
-      <div className='sign_in_out'>
-        <ToDo/>
-      </div>
+
       <br/>
       <div className='sign_in_out'>
         { 
@@ -61,6 +75,4 @@ export default function App() {
 
 
   );
-
 }
-
