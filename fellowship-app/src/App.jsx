@@ -31,7 +31,7 @@ export default function App() {
   }  
   return (
     <>
-      <div className='sign_in_out'>
+      <div>
         {content(auth)}
       </div>
 
@@ -48,16 +48,18 @@ export default function App() {
 function content(auth) {
   return (
     <div>
-      <div>
-        <pre> Hello: {auth.user?.profile.email} </pre>
-          <pre> ID Token: {auth.user?.id_token} </pre>
-          <pre> Access Token: {auth.user?.access_token} </pre>
-          <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-        </div>
+
       <div>
         {
           auth.isAuthenticated ? 
-            <UserIn/>
+            <>
+              <pre> Hello: {auth.user?.profile.user_name} </pre>
+              {/* <pre> ID Token: {auth.user?.id_token} </pre> */}
+              {/* <pre> Access Token: {auth.user?.access_token} </pre> */}
+              {/* <pre> Refresh Token: {auth.user?.refresh_token} </pre> */}
+            
+              <UserIn/>
+            </>
           :
             <Waiting/>
         }
