@@ -1,16 +1,16 @@
 import React from "react";
 import { StrictMode } from 'react'
-import ReactDOM from "react-dom/client";
 import { createRoot } from 'react-dom/client'
 import './CSS/index.css'
 import App from './App.jsx'
 
+import ReactDOM from "react-dom/client";
 import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
-  authority: "https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_XlQeZwsNg",
-  client_id: "18q8itbgqrf1aa0itru44co6d6",
-  redirect_uri: "https://main.dsj2oadeoypam.amplifyapp.com/",
+  authority: "https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_s36VOwm9v",
+  client_id: "5q3bmulc63f80neg1ecfse6hgp",
+  redirect_uri: "https://main.d3ttt6d65nqw1n.amplifyapp.com/",
   response_type: "code",
   scope: "email openid phone",
 };
