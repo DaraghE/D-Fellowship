@@ -10,6 +10,24 @@
       "StackName": "amplify-fellowshipapp-dev-43897",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:915169774712:stack/amplify-fellowshipapp-dev-43897/37d2a6b0-0093-11f0-b3c5-0ac53f352a79",
       "AmplifyAppId": "d3ttt6d65nqw1n"
+    },
+    "categories": {
+      "function": {
+        "fellowshipapp74a77dbc": {
+          "deploymentBucketName": "amplify-fellowshipapp-dev-43897-deployment",
+          "s3Key": "amplify-builds/fellowshipapp74a77dbc-4a4541666456644b544f-build.zip"
+        },
+        "dfellowshiptblTriggerb192b2a5": {
+          "deploymentBucketName": "amplify-fellowshipapp-dev-43897-deployment",
+          "s3Key": "amplify-builds/dfellowshiptblTriggerb192b2a5-56536b435878474e7861-build.zip"
+        }
+      },
+      "storage": {
+        "dfellowshiptbl": {}
+      },
+      "api": {
+        "dfellowship": {}
+      }
     }
   }
 }

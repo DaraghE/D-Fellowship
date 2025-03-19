@@ -1,0 +1,16 @@
+{
+  "resourceName": "dfellowshiptbl",
+  "tableName": "dfellowshiptbl",
+  "partitionKey": {
+    "fieldName": "creator",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "content",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "dfellowshiptblTriggerb192b2a5"
+  ]
+}

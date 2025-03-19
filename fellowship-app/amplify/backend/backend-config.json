@@ -1,1 +1,95 @@
-{}
+{
+  "api": {
+    "dfellowship": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "fellowshipapp74a77dbc"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "dfellowshiptblTriggerb192b2a5": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "dfellowshiptbl"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fellowshipapp74a77dbc": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "dfellowshiptbl"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_dfellowshiptblTriggerb192b2a5_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dfellowshiptblTriggerb192b2a5"
+        }
+      ]
+    },
+    "AMPLIFY_function_dfellowshiptblTriggerb192b2a5_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dfellowshiptblTriggerb192b2a5"
+        }
+      ]
+    },
+    "AMPLIFY_function_fellowshipapp74a77dbc_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fellowshipapp74a77dbc"
+        }
+      ]
+    },
+    "AMPLIFY_function_fellowshipapp74a77dbc_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fellowshipapp74a77dbc"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "dfellowshiptbl": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
