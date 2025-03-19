@@ -53,10 +53,11 @@ function content(auth) {
         {
           auth.isAuthenticated ? 
             <>
-              <pre> Hello: {auth.user?.profile.user_name} </pre>
-              {/* <pre> ID Token: {auth.user?.id_token} </pre> */}
-              {/* <pre> Access Token: {auth.user?.access_token} </pre> */}
-              {/* <pre> Refresh Token: {auth.user?.refresh_token} </pre> */}
+              <pre> Hello: {auth.user?.profile.cognito.username} </pre>
+              <pre> ID Email: {auth.user?.profile.email} </pre> 
+              {/* <pre> ID Token: {auth.user?.id_token} </pre> 
+              <pre> Access Token: {auth.user?.access_token} </pre>
+              <pre> Refresh Token: {auth.user?.refresh_token} </pre> */}
             
               <UserIn/>
             </>
