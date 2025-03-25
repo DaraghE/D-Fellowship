@@ -1,4 +1,10 @@
 import { useState } from 'react'
+
+import "./amplifyconfiguration";
+import { Amplify } from "aws-amplify";
+import * as awsExports from "./aws-exports.js";
+Amplify.configure(awsExports.default);
+
 import './CSS/App.css'
 
 import ToDo from './ToDo';
@@ -6,6 +12,7 @@ import ToDo from './ToDo';
 import { useAuth } from "react-oidc-context";
 
 import { UserIn, Waiting } from './Content';
+import FetchData  from './Functions/FetchData';
 
 export default function App() {
   const auth = useAuth();
@@ -31,6 +38,8 @@ export default function App() {
   }  
   return (
     <>
+      <FetchData/>
+
       <div>
         {content(auth)}
       </div>

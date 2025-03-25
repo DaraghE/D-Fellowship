@@ -18,17 +18,7 @@
   "function": {
     "dfellowshiptblTriggerb192b2a5": {
       "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ],
-          "category": "storage",
-          "resourceName": "dfellowshiptbl"
-        }
-      ],
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },

@@ -1,4 +1,7 @@
-exports.handler = function (event, context) {
+/* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+Amplify Params - DO NOT EDIT */exports.handler = function (event, context) {
   console.log(JSON.stringify(event, null, 2));
   event.Records.forEach(record => {
     console.log(record.eventID);

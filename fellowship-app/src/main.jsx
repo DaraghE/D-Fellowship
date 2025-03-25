@@ -1,6 +1,11 @@
 import React from "react";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+import { Amplify } from "aws-amplify";
+import * as awsExports from "./aws-exports.js";
+Amplify.configure(awsExports.default);
+
 import './CSS/index.css'
 import App from './App.jsx'
 
@@ -18,6 +23,8 @@ const cognitoAuthConfig = {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
+      {console.log("LOADING App.jsx")}
+      {/* {console.log("AWS Exports:", awsExports)} */}
       <App />
     </AuthProvider>
   </StrictMode>,
