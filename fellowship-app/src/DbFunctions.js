@@ -1,0 +1,6 @@
+// LIST
+// GET
+// CREATE
+// READ
+// UPDATE
+// DELETE

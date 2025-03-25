@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './CSS/App.css'
 
-import ToDo from './ToDo';
-
 import { useAuth } from "react-oidc-context";
 
 import { UserIn, Waiting } from './Content';
@@ -31,6 +29,7 @@ export default function App() {
   }  
   return (
     <>
+      
       <div>
         {content(auth)}
       </div>
@@ -53,15 +52,13 @@ function content(auth) {
         {
           auth.isAuthenticated ? 
             <>
-              <pre> Hello: {auth.user?.profile.email} </pre>
-              <pre> ID Token: {auth.user?.id_token} </pre> 
-              <pre> Access Token: {auth.user?.access_token} </pre>
-              <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-            
               <UserIn/>
             </>
           :
+          <>
             <Waiting/>
+          </>
+            
         }
       </div>
     </div>
