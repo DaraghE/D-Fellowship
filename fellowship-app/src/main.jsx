@@ -2,7 +2,7 @@ import React from "react";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import awsExports from "./aws-exports";
+// import awsExports from "./aws-exports";
 import Amplify from "aws-amplify";
 
 Amplify.configure(awsExports);
