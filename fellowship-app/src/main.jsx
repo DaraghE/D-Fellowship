@@ -2,8 +2,9 @@ import React from "react";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { Amplify } from "aws-amplify"
-import awsExports from "./aws-exports"
+import awsExports from "./aws-exports";
+import Amplify from "aws-amplify";
+
 Amplify.configure(awsExports);
 
 import './CSS/index.css'
