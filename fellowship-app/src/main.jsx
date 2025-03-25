@@ -1,11 +1,6 @@
 import React from "react";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
-import { Amplify } from "aws-amplify"
-import awsExports from "./aws-exports"
-Amplify.configure(awsExports);
-
 import './CSS/index.css'
 import App from './App.jsx'
 
