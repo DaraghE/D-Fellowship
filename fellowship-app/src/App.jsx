@@ -17,12 +17,7 @@ import FetchData  from './Functions/FetchData';
 export default function App() {
   const auth = useAuth();
 
-  const signOutRedirect = () => {
-    const clientId = "5q3bmulc63f80neg1ecfse6hgp";
-    const logoutUri = "<logout uri>";
-    const cognitoDomain = "https://<user pool domain>";
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
-  };
+
 
   if (auth.isLoading) {
     return <div>Loading...</div>;
@@ -77,6 +72,14 @@ function content(auth) {
   )
 
 }
+
+const signOutRedirect = () => {
+  const clientId = "5q3bmulc63f80neg1ecfse6hgp";
+  const logoutUri = "<logout uri>";
+  const cognitoDomain = "https://<user pool domain>";
+  window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
+};
+
 function auth_controls(auth) {
   return (
     <div className='sign_in_out'>
