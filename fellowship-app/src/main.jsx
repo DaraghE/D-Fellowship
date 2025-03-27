@@ -1,6 +1,9 @@
 import React from "react";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import ReactDOM from "react-dom/client";
+
+import { AuthProvider } from "react-oidc-context";
 
 // import { Amplify } from "aws-amplify";
 // import * as awsExports from "./aws-exports.js";
@@ -9,8 +12,6 @@ import { createRoot } from 'react-dom/client'
 import './CSS/index.css'
 import App from './App.jsx'
 
-import ReactDOM from "react-dom/client";
-import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
   authority: "https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_s36VOwm9v",
@@ -20,7 +21,9 @@ const cognitoAuthConfig = {
   scope: "email openid phone",
 };
 
-createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
       {console.log("LOADING App.jsx")}
