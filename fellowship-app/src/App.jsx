@@ -10,7 +10,7 @@ import './CSS/App.css'
 import { useAuth } from "react-oidc-context";
 
 // import { UserIn, Waiting } from './Content';
-// import FetchData  from './Functions/FetchData';
+import FetchData  from './Functions/FetchData';
 
 export default function App() {
   const auth = useAuth();
@@ -32,57 +32,14 @@ export default function App() {
 
 
   if (auth.isAuthenticated) {
-    return (
-      <div>
-        <pre> Hello: {auth.user?.profile.email} </pre>
-        <pre> ID Token: {auth.user?.id_token} </pre>
-        <pre> Access Token: {auth.user?.access_token} </pre>
-        <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-
-        <button onClick={() => auth.removeUser()}>Sign out</button>
-      </div>
-    );
+    console.log("User");
+    console.log(auth.user);
   }
-  // if (auth.isAuthenticated) {
-  //   console.log("User");
-  //   console.log(auth.user);
-  
-  
-  //     <div>
-  //       {content(auth)}
-  //     </div>  
-  // }  
   
   return (
     <div>
-      <button onClick={() => auth.signinRedirect()}>Sign in</button>
-      <button onClick={() => signOutRedirect()}>Sign out</button>
-    </div>
-  );  
-  // return (
-  //   <>
-  //     <FetchData/>
-  //     <br/>     
-  //     <div>
-  //       <div className='sign_in_out'>
-  //         { 
-  //           auth.isAuthenticated ? 
-  //             <button onClick={() => signOutRedirect()}>Sign out</button> 
-  //             : 
-  //             <button onClick={() => auth.signinRedirect()}>Sign in</button>
-  //         }
-  //       </div> 
-  //     </div>
-  //   </>
-  // );  
-  
-}
-
-function content(auth) {
-  return (
-    <div>
-
-      <div>
+        <FetchData/>
+        <div className='content'>
         {
           auth.isAuthenticated ? 
             <>
@@ -90,15 +47,21 @@ function content(auth) {
               <pre> ID Token: {auth.user?.id_token} </pre> 
               <pre> Access Token: {auth.user?.access_token} </pre>
               <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-            
-              <UserIn/>
             </>
           :
-            <Waiting/>
+            <h3>Waiting for sign in</h3>
         }
       </div>
-    </div>
-  )
 
+      <div className='sign_in_out'>
+        { 
+          auth.isAuthenticated ? 
+            <button onClick={() => signOutRedirect()}>Sign out</button> 
+          : 
+            <button onClick={() => auth.signinRedirect()}>Sign in</button>
+        }        
+      </div>
+    </div>
+  );  
 }
 

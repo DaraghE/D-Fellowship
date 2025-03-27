@@ -5,9 +5,9 @@ import ReactDOM from "react-dom/client";
 
 import { AuthProvider } from "react-oidc-context";
 
-// import { Amplify } from "aws-amplify";
-// import * as awsExports from "./aws-exports.js";
-// Amplify.configure(awsExports.default);
+import { Amplify } from "aws-amplify";
+import * as awsExports from "./aws-exports.js";
+Amplify.configure(awsExports.default);
 
 import './CSS/index.css'
 import App from './App.jsx'
@@ -26,7 +26,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
-      {console.log("LOADING App.jsx")}
       {/* {console.log("AWS Exports:", awsExports)} */}
       <App />
     </AuthProvider>

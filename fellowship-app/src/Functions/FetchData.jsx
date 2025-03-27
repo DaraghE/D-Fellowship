@@ -1,12 +1,25 @@
-// import React, { useEffect, useState } from "react";
-// import * as API from "@aws-amplify/api-rest";
+import React, { useEffect, useState } from "react";
+import * as API from "@aws-amplify/api-rest";
 
 export default function FetchData(){
     console.log("FETCHING DATA");
 
-    // const [items, setItems] = useState([]);
-    // const [loading, setLoading] = useState(true);
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
     
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await API.get("dfellowship", "/items"); // API name must match `aws-exports.js`
+                console.log("Fetched data:", response);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     // useEffect(() => {
     //     const fetchItems = async () => {
     //       try {

@@ -1,6 +1,17 @@
+.content{
+    background-color: rgba(255, 255, 255, 0.164);
+
+    margin-bottom: 6px;
+
+    display: flex;
+    justify-content: center;
+}
+
 .sign_in_out{
     background-color: rgba(255, 255, 255, 0.164);
 
-    padding-left: 50%;
-    padding-right: 50%;
+    padding: 6px;
+    
+    display: flex;
+    justify-content: center;
 }

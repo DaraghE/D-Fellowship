@@ -1,3 +1,5 @@
 {
+  "resourceName": "dfellowshiptbl",
+  "storagedfellowshiptblArn": "arn:aws:dynamodb:ap-southeast-2:915169774712:table/dfellowshiptbl-dev",
   "permissions": {}
 }
