@@ -3,7 +3,7 @@
   "paths": {
     "/items": {
       "name": "/items",
-      "lambdaFunction": "fellowshipapp74a77dbc",
+      "lambdaFunction": "dfellowshiptblTrigger",
       "permissions": {
         "setting": "open"
       }

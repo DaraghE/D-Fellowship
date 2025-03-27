@@ -1,23 +1,15 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "dfellowship": {
+    "dfellowapi": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
     }
   },
   "function": {
-    "dfellowshiptblTriggerb192b2a5": {
+    "dfellowshiptblTrigger": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    },
-    "fellowshipapp74a77dbc": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     }

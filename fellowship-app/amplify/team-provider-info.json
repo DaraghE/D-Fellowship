@@ -13,15 +13,8 @@
     },
     "categories": {
       "function": {
-        "fellowshipapp74a77dbc": {
-          "deploymentBucketName": "amplify-fellowshipapp-dev-43897-deployment",
-          "s3Key": "amplify-builds/fellowshipapp74a77dbc-4a4541666456644b544f-build.zip"
-        },
-        "dfellowshiptblTriggerb192b2a5": {
-          "deploymentBucketName": "amplify-fellowshipapp-dev-43897-deployment",
-          "s3Key": "amplify-builds/dfellowshiptblTriggerb192b2a5-56536b435878474e7861-build.zip"
-        },
-        "DFellowLambda": {}
+        "DFellowLambda": {},
+        "dfellowshiptblTrigger": {}
       },
       "storage": {
         "dfellowshiptbl": {}

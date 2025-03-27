@@ -1,20 +1,18 @@
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-Amplify Params - DO NOT EDIT */
-
-exports.handler = function (event, context) {
-  console.log(JSON.stringify(event, null, 2));
-  event.Records.forEach(record => {
-    console.log(record.eventID);
-    console.log(record.eventName);
-    console.log('DynamoDB Record: %j', record.dynamodb);
-  });
-  context.done(null, 'Successfully processed DynamoDB record');
-};
-
 const AWS = require("aws-sdk");
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
+
+/**
+ * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
+ */
+// exports.handler = event => {
+//   console.log(`EVENT: ${JSON.stringify(event)}`);
+//   for (const record of event.Records) {
+//     console.log(record.eventID);
+//     console.log(record.eventName);
+//     console.log('DynamoDB Record: %j', record.dynamodb);
+//   }
+//   return Promise.resolve('Successfully processed DynamoDB record');
+// };
 
 exports.handler = async (event) => {
     try {
