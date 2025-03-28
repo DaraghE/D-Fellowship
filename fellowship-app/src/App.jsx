@@ -43,7 +43,7 @@ export default function App() {
         {
           auth.isAuthenticated ? 
             <div>
-              {/* <div> Hello: {auth.user?.profile.cognito.username} </div> */}
+              <div> Hello: {auth.user?.profile("cognito:username")} </div>
               <div> Email: {auth.user?.profile.email} </div>
               {/* <div> ID Token: {auth.user?.id_token} </div> 
               <div> Access Token: {auth.user?.access_token} </div>
