@@ -42,12 +42,13 @@ export default function App() {
         <div className='content'>
         {
           auth.isAuthenticated ? 
-            <>
-              <pre> Hello: {auth.user?.profile.email} </pre>
-              <pre> ID Token: {auth.user?.id_token} </pre> 
-              <pre> Access Token: {auth.user?.access_token} </pre>
-              <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-            </>
+            <div>
+              <div> Hello: {auth.user?.profile.cognito.username} </div>
+              <div> Email: {auth.user?.profile.email} </div>
+              {/* <div> ID Token: {auth.user?.id_token} </div> 
+              <div> Access Token: {auth.user?.access_token} </div>
+              <div> Refresh Token: {auth.user?.refresh_token} </div> */}
+            </div>
           :
             <h3>Waiting for sign in</h3>
         }
