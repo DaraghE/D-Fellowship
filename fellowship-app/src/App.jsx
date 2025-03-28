@@ -10,7 +10,7 @@ import './CSS/App.css'
 import { useAuth } from "react-oidc-context";
 
 // import { UserIn, Waiting } from './Content';
-import FetchData  from './Functions/FetchData';
+// import FetchData  from './Functions/FetchData';
 
 export default function App() {
   const auth = useAuth();
@@ -38,7 +38,7 @@ export default function App() {
   
   return (
     <div>
-        <FetchData/>
+        {/* <FetchData/> */}
         <div className='content'>
         {
           auth.isAuthenticated ? 
