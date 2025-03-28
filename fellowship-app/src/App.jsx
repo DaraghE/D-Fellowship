@@ -33,7 +33,7 @@ export default function App() {
 
   if (auth.isAuthenticated) {
     console.log("User");
-    console.log(auth.user);
+    console.log(auth.user.profile);
   }
   
   return (
@@ -43,7 +43,7 @@ export default function App() {
         {
           auth.isAuthenticated ? 
             <div>
-              <div> Hello: {auth.user?.profile.cognito.username} </div>
+              {/* <div> Hello: {auth.user?.profile.cognito.username} </div> */}
               <div> Email: {auth.user?.profile.email} </div>
               {/* <div> ID Token: {auth.user?.id_token} </div> 
               <div> Access Token: {auth.user?.access_token} </div>
