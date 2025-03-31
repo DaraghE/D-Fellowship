@@ -75,3 +75,10 @@ Step 8: Document the Project
 1. Write a README file with setup instructions.
 2. Include instructions for running the project locally and deploying it.
 3. Provide the deployed application link.
+
+
+Over all I know i could have done better, But I came thinking I knew the process after making apps with similar funtionallity (seen in links below).
+
+(DB credentils need updating)
+Bar Book: https://main.d3d2uywy5ajazp.amplifyapp.com
+Portfolio: https://main.dhhpo8bzwxbca.amplifyapp.com
