@@ -1,6 +1,7 @@
 To initialise the dev build 
     cd fellowship-app
     npm run dev
+*As I was unable to complete setting up the backend there is to need to update credentials 
 
 Deployed app: https://main.d3ttt6d65nqw1n.amplifyapp.com
 Create account or sign in as:
